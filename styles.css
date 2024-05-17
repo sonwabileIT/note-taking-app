@@ -39,6 +39,11 @@ button {
 
 h2 {
     text-align: center;
+    font-family: 'Roboto';
+}
+
+label, p {
+    font-family: 'Roboto';
 }
 
 @media (max-width: 700px){
