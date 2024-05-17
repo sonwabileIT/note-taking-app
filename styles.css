@@ -1,0 +1,42 @@
+#input {
+    display:grid;
+    margin-bottom: 20px;
+}
+
+label {
+    margin-bottom: 4px;
+}
+
+input {
+    padding: 10px;
+}
+
+#side {
+    display:flex;
+    margin-right: 8px;
+}
+
+section {
+    /* margin-right: 20px; */
+    padding:15px;
+    width: 410px;
+}
+
+button {
+    padding: 8px;
+}
+
+#taskTextbox {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    background-color:antiquewhite;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    text-align: center;
+}
+
