@@ -12,15 +12,15 @@
 
             <div id="input">
                 <label>Task Name</label>
-                <input type="text" placeholder="Clean Room">
+                <input type="text" id="taskname" placeholder="Clean Room">
             </div>
             <div id="input">
                 <label>Task Description</label>
-                <textarea type="text" placeholder="At 09:00 make up bed."></textarea>
+                <textarea type="text" id="taskdescription" placeholder="At 09:00 make up bed."></textarea>
             </div>
             <div id="button-section">
-                <button>Add Task</button>
-                <button>Cancel</button>
+                <button id="addtask">Add Task</button>
+                <button id="cancel">Cancel</button>
             </div>
         </section>
 
@@ -28,24 +28,28 @@
             <h2>Todo List</h2>
 
             <ul>
-                <li id="taskTextbox">
-                    <p>Task 1</p>
-                    <p>Task Description </p>
-                </li>
-                <li id="taskTextbox">
-                    <p>Task 1</p>
-                    <p>Task Description </p>
-                </li>
-                <li id="taskTextbox">
-                    <p>Task 1</p>
-                    <p>Task Description </p>
-                </li>
-                <li id="taskTextbox">
-                    <p>Task 1</p>
-                    <p>Task Description </p>
-                </li>
+                <div id="lists">
+                    <!-- <li id="taskTextbox">
+                        <p>Task 1</p>
+                        <p>Task Description </p>
+                    </li>
+                    <li id="taskTextbox">
+                        <p>Task 1</p>
+                        <p>Task Description </p>
+                    </li>
+                    <li id="taskTextbox">
+                        <p>Task 1</p>
+                        <p>Task Description </p>
+                    </li>
+                    <li id="taskTextbox">
+                        <p>Task 1</p>
+                        <p>Task Description </p>
+                    </li> -->
+                </div>
             </ul>
+            
         </section>
     </div>
+    <script src="save.js"></script>
 </body>
 </html>
