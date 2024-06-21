@@ -1,19 +1,21 @@
 const addTask = document.getElementById('addtask');
 const cancel = document.getElementById('cancel');
-const taskList = [];
+const taskList = [
+];
 
-addTask.onclick = function(){
-    let taskName = document.getElementById('taskname').value;
-    let taskDescription = document.getElementById('taskdescription').value;
+addTask.onclick = async function(){
+    let taskName = await document.getElementById('taskname').value;
+    let taskDescription = await document.getElementById('taskdescription').value;
 
     let taskItem = {
-        taskItemName: taskName,
-        taskItemDescription: taskDescription
+        taskName: taskName,
+        taskDescription: taskDescription
     };
 
     localStorage.setItem('taskname',JSON.stringify(taskName));
     localStorage.setItem('taskdescription', JSON.stringify(taskDescription));
     taskList.push(taskItem);
+    await refreash();
 
     console.log(localStorage.getItem('taskname'));
     console.log(localStorage.getItem('taskdescription'));
@@ -29,24 +31,19 @@ cancel.onclick = function(){
     console.log('cancel clicked')
 }
 
-let listing ='';
+async function refreash(){
+    let listing ='';
 
-for(const x of taskList){
+    for(const x of taskList){
 
-    listing += `<li id="taskTextbox">
-    <p>${x.taskName}</p>
-    <p>${x.taskDescription}</p>
-    </li>`
-}
-console.log(listing);
+        listing += `<li id="taskTextbox">
+        <p>${x.taskName}</p>
+        <p>${x.taskDescription}</p>
+        </li>`
+    }
+// console.log(listing);
 
 document.getElementById('lists').innerHTML = listing;
-// `<li id="taskTextbox">
-//     <p>${taskList[0].taskName}</p>
-//     <p>${taskList[0].taskDescription}</p>
-// </li>
-// <li id="taskTextbox">
-//     <p>${taskList[1].taskName}</p>
-//     <p>${taskList[1].taskDescription}</p>
-// </li>
-// `
+}
+
+refreash();
