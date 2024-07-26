@@ -103,6 +103,17 @@ label, p {
     }
 }
 
+#list-section {
+background-color: rgba(94, 151, 153, 0.363);
+height: 300px;
+}
+
+#list-section p{
+    text-align: center;
+    padding-top: 140px;
+    font-weight: bold;
+}
+
 /* @media (max-width: 1024px){
     section {
         width: 380px;
