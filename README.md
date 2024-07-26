@@ -12,3 +12,7 @@ This app can be displayed on a PC or Mobile.
 ### Mobile View
 
 <img alt="Mobile View" src="public/MobileView.png" >
+
+## Usage
+
+Use the Live Server on Visual Studio Code to run the project.
