@@ -1,10 +1,12 @@
 const addTask = document.getElementById('addtask');
 const cancel = document.getElementById('cancel');
+const tasknameinput = document.getElementById('tasknameinput');
+const taskdescriptioninput = document.getElementById('taskdescriptioninput');
 const taskList = [];
 
 addTask.onclick = async function(){
-    let taskName = await document.getElementById('taskname').value;
-    let taskDescription = await document.getElementById('taskdescription').value;
+    let taskName = await tasknameinput.value;
+    let taskDescription = await taskdescriptioninput.value;
 
     let taskItem = {
         taskName: taskName,
@@ -17,6 +19,9 @@ addTask.onclick = async function(){
         window.alert("Please enter values in the fields.")
     }else{
         taskList.push(taskItem);
+        localStorage.setItem('tasks', JSON.stringify(taskList))
+        tasknameinput.value = "";
+        taskdescriptioninput.value = "";
         await displayList();
     }
     
@@ -28,17 +33,22 @@ addTask.onclick = async function(){
 
 cancel.onclick = function(){
 
-    let a = document.getElementById('taskname').innerText;
-    let b = document.getElementById('taskdescription').innerText;
+    // let a = document.getElementById('taskname').innerText;
+    // let b = document.getElementById('taskdescription').innerText;
 
-    console.log(a, b);
+    // console.log(a, b);
+    if(taskList.length > 0){
+        taskList.pop()
+    }
+    localStorage.clear()
+    displayList();
     console.log('cancel clicked')
 
 
 }
 
 async function displayList(){
-    let tasks = taskList;
+    let tasks = JSON.parse(localStorage.getItem('tasks')) || taskList;
     let listing = '';
 
     if(tasks.length == 0){
@@ -47,8 +57,13 @@ async function displayList(){
     }else{
         for(const x of tasks){
             listing += `<li id="taskTextbox">
+            <div>
             <h3>${x.taskName}</h3>
             <p>${x.taskDescription}</p>
+            </div>
+            <div>
+            <p>del</p>
+            </div>
             </li>`
         }
         document.getElementById('lists').innerHTML = listing;
