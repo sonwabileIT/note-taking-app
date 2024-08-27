@@ -57,8 +57,13 @@ async function displayList(){
     }else{
         for(const x of tasks){
             listing += `<li id="taskTextbox">
+            <div>
             <h3>${x.taskName}</h3>
             <p>${x.taskDescription}</p>
+            </div>
+            <div>
+            <p>del</p>
+            </div>
             </li>`
         }
         document.getElementById('lists').innerHTML = listing;
